@@ -1,4 +1,5 @@
 pipeline {
+	agent any
 	environment {
 	//Docker Hub repository User ID and Image name
 	DOCKER_HUB_REPO = "ssrful/terraform-flask"
@@ -10,8 +11,6 @@ pipeline {
 	options {
 		skipStagesAfterUnstable ()
 	}
-	// #############################################
-	agent none
 	stages {
 		stage ('Setup Docker Agent') {
 			agent {
@@ -20,6 +19,8 @@ pipeline {
 				}
 			}
 		}
+	}	
+	stages {	
 		stage('Cleaning up previous Repositories') {
 			steps {
 				sh 'rm -rf $PWD/Terraform_Jenkins'
@@ -59,13 +60,5 @@ pipeline {
 				sh 'terraform apply '
 				}
 			}
-		//Lastly let's deploy the application via ansible to Kubernetes
-		//stage('Deploy to Kubernetes/Ansible') {
-		//	steps {
-		//		script {
-		//			sh 'kubectl apply -f kubernetes.yaml'
-		//		}
-		//	}
-		//}
 	}
 }
