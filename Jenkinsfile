@@ -26,7 +26,7 @@ pipeline {
 	//This step will build Image in Docker with UserID/ProjectName
 			steps{
 				script {
-					sh 'docker image build -t $DOCKER_HUB_REPO:latest .'
+					sh 'winpty docker image build -t $DOCKER_HUB_REPO:latest .'
 					sh 'docker image tag $DOCKER_HUB_REPO:latest $DOCKER_HUB_REPO:$BUILD_NUMBER'
 					echo "Docker Image Build was successful"
 				}			
