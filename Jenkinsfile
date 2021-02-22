@@ -9,6 +9,7 @@ pipeline {
 	}
 	options {
 		skipStagesAfterUnstable ()
+	}
 	// #############################################
 	agent none
 	stages {
@@ -66,6 +67,5 @@ pipeline {
 		//		}
 		//	}
 		//}
-		}
 	}
 }
