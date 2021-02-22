@@ -6,7 +6,7 @@ pipeline {
 		//Registry Credentials
 		REGISTRY_ID = 'dockerhub_id'
 		//Container Image name
-		dockerImage = 'Terraform'
+		dockerImage = 'Terraform-Flask-App'
 	}
 	options {
 		skipStagesAfterUnstable ()
