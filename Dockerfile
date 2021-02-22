@@ -3,7 +3,7 @@ WORKDIR /usr/src/app
 ENV Flask-App web.py
 ENV Flask-App_Host 0.0.0.0
 COPY . .
-RUN apt-get -y update 
+RUN apt-get -y update && apt-get upgrade
 RUN pip install -r requirements.txt
 EXPOSE 9090
 CMD ["python", "web.py"]
