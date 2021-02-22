@@ -13,7 +13,7 @@ pipeline {
 	// #############################################
 	agent none
 	stages {
-		stage ('Back-End') {
+		stage ('Setup Docker Agent') {
 			agent {
 				dockerfile {
 					args '-u root -v /root/.m2:/root/.m2 /var/run/docker.sock:/var/run/docker.sock'
