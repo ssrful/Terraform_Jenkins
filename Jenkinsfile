@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 		//Docker Hub repository User ID and Image name
-		DOCKER_HUB_REPO = "ssrful/Terraform"
+		DOCKER_HUB_REPO = "ssrful/terraform-flask"
 		//Registry Credentials
 		REGISTRY_ID = 'dockerhub_id'
 		//Container Image name

@@ -35,7 +35,7 @@ spec {
     }
   }
   spec {
-    image = "ssrful/Terraform"
+    image = "ssrful/terraform-flask"
     name = "Flask-App"
   }
   resources {
